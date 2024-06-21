@@ -72,7 +72,10 @@
     - **Answer:** IAM policy simulator allows you to test ,verify and simulate the exact scenario in which users or applications call an AWS action. It enables to validate the access before sharing to the users.
 
 **22.Difference between Role and Policy in IAM ?**
-
+   - **Answer:**
+   - **IAM users:** represent individual people or entities that need access to your AWS resources. They have their own credentials and are typically associated with long-term access.
+   - **IAM roles:** are used to grant temporary access to AWS resources, usually for applications or services. Roles have associated policies and can be assumed by trusted entities to access resources securely.
+- 
 **23. You have multiple AWS accounts within your organization, and you need to grant permissions to users across these accounts. How can you achieve this securely?** 
    - **Answer:** You can use AWS Organizations to centrally manage multiple accounts and then setup cross account IAM roles to grant access to users from one account to resources in another account. 
    
