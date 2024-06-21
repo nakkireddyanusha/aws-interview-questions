@@ -69,45 +69,45 @@
     - **Answer:** Troubleshooting IAM permission issues involves checking policies, roles, and group memberships to ensure that the user has the necessary permissions. CloudTrail logs can be reviewed to identify any denied actions and diagnose the issue.
 
 **21. what is IAM policy simulator?**
-    -**Answer:** IAM policy simulator allows you to test ,verify and simulate the exact scenario in which users or applications call an AWS action. It enables to validate the access before sharing to the users.
+    - **Answer:** IAM policy simulator allows you to test ,verify and simulate the exact scenario in which users or applications call an AWS action. It enables to validate the access before sharing to the users.
 
 **22.Difference between Role and Policy in IAM ?**
 
 **23. You have multiple AWS accounts within your organization, and you need to grant permissions to users across these accounts. How can you achieve this securely?** 
-   -**Answer:** You can use AWS Organizations to centrally manage multiple accounts and then setup cross account IAM roles to grant access to users from one account to resources in another account. 
+   - **Answer:** You can use AWS Organizations to centrally manage multiple accounts and then setup cross account IAM roles to grant access to users from one account to resources in another account. 
    
 **24: A developer needs to access an S3 bucket for a limited time to troubleshoot an issue. How can you provide temporary access without sharing long-term credentials?**
-   -**Answer:**  We can create a role with specific permissins and use AWS Security Token Service(STS)to generate temporary credentials. 
+   - **Answer:**  We can create a role with specific permissins and use AWS Security Token Service(STS)to generate temporary credentials. 
    
 **25: You want to ensure that all IAM users in your AWS account have multi-factor authentication (MFA) enabled. How can you enforce this policy?**
-  -**Answer:** You can create an IAM policy that requires MFA for certain actions and attach it to all IAM users or we can ask all users to enable MFA 
+  - **Answer:** You can create an IAM policy that requires MFA for certain actions and attach it to all IAM users or we can ask all users to enable MFA 
 
 **26. You are managing a large team of developers, and you want to reduce the administrative overhead of managing IAM users individually. What solution can you implement?** 
-   -**Answer:** Implement AWS Single Sign-On(SSO) to centrally manage access and permissions for your team. This allows to integrate with your identity provider and simplifys user management
+   - **Answer:** Implement AWS Single Sign-On(SSO) to centrally manage access and permissions for your team. This allows to integrate with your identity provider and simplifys user management
 
 **27. You have a Lambda function that needs to access resources in an S3 bucket. How can you grant this function the necessary permissions securely?**
-   -**Answer:** We can create an IAM role for Lambda and attach a policy that grants access to speciifc s3 bucket 
+   - **Answer:** We can create an IAM role for Lambda and attach a policy that grants access to speciifc s3 bucket 
 
 **28 You need to provide an external contractor with temporary access to your AWS environment. What is a secure way to do this?**
-   -**Answer:** Create a IAM user for the contractor, configure permissions according to principle of least privilege and set an expiration date on user credentials. Also delete, or disable the user once work is completed. 
+   - **Answer:** Create a IAM user for the contractor, configure permissions according to principle of least privilege and set an expiration date on user credentials. Also delete, or disable the user once work is completed. 
 
 **29 You want to restrict access to certain EC2 instances based on specific tags (e.g., "Environment" = "Production"). How can you achieve this?**
-    -**Answer:** create a custom IAM policy with specific permissions along with condition keys to contol access based on EC2 instance tags.Include a condition that checks the tag value before granting permissions. 
+    - **Answer:** create a custom IAM policy with specific permissions along with condition keys to contol access based on EC2 instance tags.Include a condition that checks the tag value before granting permissions. 
     
 **30 Your organization has multiple departments, each with its own AWS resources. How can you implement IAM policies to isolate access between departments?**
  
 **31 You want to enable developers to launch EC2 instances for development purposes but prevent them from creating overly large instances. How can you enforce instance size restrictions?**
-   -**Answer:** Create an IAM policy that includes conditions based on Instance type and set size limitations. Attach this policy to the developers user or roles. 
+   - **Answer:** Create an IAM policy that includes conditions based on Instance type and set size limitations. Attach this policy to the developers user or roles. 
 
 
 **32 You have an application that needs to access an RDS database securely. How can you ensure the application's credentials are kept secret and rotated regularly?**
-   -**Answer:** We can use AWS Secrets manager to store and manage the database credentials securely. Enable automatic rotation and grant applications IAM roles permissions to access the Secrets. 
+   - **Answer:** We can use AWS Secrets manager to store and manage the database credentials securely. Enable automatic rotation and grant applications IAM roles permissions to access the Secrets. 
 
 **33 What is AWS Secrets Manager for?** 
-   -**Answer:** AWS Secrets Manager helps you manage, retrieve, and rotate database credentials, application credentials, OAuth tokens, API keys, and other secrets throughout their lifecycles. 
+   - **Answer:** AWS Secrets Manager helps you manage, retrieve, and rotate database credentials, application credentials, OAuth tokens, API keys, and other secrets throughout their lifecycles. 
 
 **34 What is CloudTrail in AWS?**
-    -**Answer:** CloudTrail is a web service that records API activity in your AWS account.
+    - **Answer:** CloudTrail is a web service that records API activity in your AWS account.
     - AWS CloudTrail is an AWS service that helps you enable operational and risk auditing and compliance of your AWS account. 
     - Actions taken by a user, role, or an AWS service are recorded as events in CloudTrail. 
     - Events include actions taken in the AWS Management Console, AWS Command Line Interface, and AWS SDKs and APIs.
