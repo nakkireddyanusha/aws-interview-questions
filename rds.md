@@ -15,6 +15,8 @@
 5. **How do you choose the appropriate instance type for an RDS database?**
   *Answer:* Consider factors like the workload type, size of the database, and performance requirements when choosing an instance type.
 
+   **Key differences between Amazonn RDS and Amazon Dynamo DB**
+
 ### Multi-AZ Deployment:
 
 6. **What is Multi-AZ deployment in Amazon RDS?**
