@@ -1,34 +1,76 @@
 ### EC2 Instance:
 
-1. **What is an EC2 instance?**
-  **Answer:** An EC2 instance is a virtual server in the Amazon Elastic Compute Cloud (EC2) service. It provides scalable computing capacity in the AWS cloud, allowing users to run applications and services.
+1. Definitions:
 
-2. **Can you explain the difference between an instance and an AMI?**
+  **EC2:** An EC2 instance is a virtual server in the Amazon Elastic Compute Cloud (EC2) service. It provides scalable computing capacity in the AWS cloud, allowing users to run applications and services.
+   
+  **AWS:** AWS is a public cloud computing environment that offers more than 200 services from many data centers around the world. It is a compute platform that provides on-demand, scalable, computing capacity through instances for different enterprise applications and workloads.
+  
+  **AMI:** Amazon Machine Image is a template which contains os & and software configurations(appln s/w) required to launch the instance. Users can select an AMI provided by AWS or can create their own AMIs if they need
+  
+  **Launch Template:** allows to create saved instance configurations that can be reused ,shared and launched later
+
+  **Reboot Instance** Rebooting an EC2 instance is a useful action for resolving certain system issues, applying updates, or refreshing the instance’s runtime environment.
+   
+3. **Can you explain the difference between an instance and an AMI?**
   **Answer:** An instance is a running virtual server in EC2, while an AMI (Amazon Machine Image) is a pre-configured virtual machine template that serves as a blueprint for launching instances. You use an AMI to create, launch, and clone instances.
 
-3. **How do you launch an EC2 instance?**
-  **Answer:** You can launch an EC2 instance through the AWS Management Console, AWS CLI (Command Line Interface), or SDKs using the "RunInstances" command.
+4. **How do you launch an EC2 instance?**
+  **Answer:** You can launch an EC2 instance through the AWS Management Console, AWS CLI,SSH Client(Mobaxterm), Session Manager
+   
+6. **What is the significance of an instance type?**
+  **Answer:** An instance type defines the hardware of the host computer used for your instance. Each instance type offers different combinations of CPU, memory, storage, and networking capacity. It has five types of instance types:
+   - 1. general purpose : Ideal for web applications, microservices, small and medium databases and web servers.
+   - 2. compute optimized : Used to run compute-intensive applications that require large amounts of processing power and memory on the AWS cloud. Ideal for **batch processing, gaming servers, machine learning,** distributed analytics, video encoding and ad serving.
+   - 3. memory optimized : Ideal for workloads that process large data sets in memory. These include **open source databases;SQL and NoSql db's,big data analytics** and in-memory caches
+   - 4. storage optimized : Ideal for applications that require high IOPS, specifically, high sequential read/write access to large data sets on local storage.
+        Used in real-time analytics, **transactional databases,data streaming,search engines** relational databases, NoSQL databases and large distributed file systems.
+   - 5. accelerated computing: **Deep learning, generative AI, and HPC workloads** are well-suited for accelerated computing instances.
 
-4. **What is the significance of an instance type?**
-  **Answer:** An instance type defines the hardware of the host computer used for your instance. Each instance type offers different combinations of CPU, memory, storage, and networking capacity. It determines the performance and pricing of your instance.
-
-5. **What is the purpose of user data in EC2 instances?**
+7. **What is the purpose of user data in EC2 instances?**
   **Answer:** User data allows you to run scripts or provide configuration information when launching an instance. This is useful for tasks like installing software, setting up configurations, or running custom startup scripts.
 
-6. **How can you stop and start an EC2 instance?**
+8. **How can you stop and start an EC2 instance?**
   **Answer:** You can stop an EC2 instance through the AWS Management Console, AWS CLI, or SDKs. To start a stopped instance, use the same methods.
 
-7. **What is the difference between stopping and terminating an EC2 instance?**
+9. **What is the difference between stopping and terminating an EC2 instance?**
   **Answer:** When you stop an instance, it is turned off but remains in the AWS infrastructure. You can start it again later. Terminating an instance permanently deletes it and its associated resources.
 
-8. **How do you resize an EC2 instance?**
+10. **How do you resize an EC2 instance?**
   **Answer:** You can resize an EC2 instance by stopping it, changing its instance type in the AWS Management Console, and then starting it again.
 
-9. **Can you attach an IAM role to an existing EC2 instance?**
-  **Answer:** Yes, you can associate an IAM role with an existing EC2 instance. You do this by stopping the instance, modifying the instance settings, and attaching the desired IAM role.
+11. **Can you attach an IAM role to an existing EC2 instance?**
+  **Answer:** Yes, you can associate an IAM role with an existing EC2 instance. You do this by stopping the instance, modifying the instance settings, and attaching the desired IAM role.  Actions - security - Modify IAM ROLE
 
-10. **Explain the concept of an Elastic IP address in EC2.**
+12. **Explain the concept of an Elastic IP address in EC2.**
    **Answer:** An Elastic IP address is a static, public IPv4 address that you can allocate to your AWS account. It's designed for dynamic cloud computing to ensure that the IP address of your EC2 instance doesn't change if the instance is stopped or terminated.
+
+    **Explain the concept of keypairs in EC2.**
+
+    **Explain the concept of network interfaces in EC2.**
+    
+    **What are the type of virtualization do we have on AWS Platform?** --- HVM and Para virtual (PV)
+
+    **What is difference between t2.micro and t3.micro?**
+    
+   **What are the usages of TAGs with EC2 / AWS Resources?**
+     **Answer:** You can assign metadata to your resources in the form of tags.
+     - Each tag is a label consisting of a user-defined key and value. 
+     - Tags can help you manage, identify, organize, search for, and filter resources. You can create tags to categorize resources by purpose, owner, environment, or other criteria.
+   
+   **How can we recover lost ec2 ssh key?**
+   
+   **How do you choose the right instance type for your application?**
+      **Answer:** Consider factors such as CPU,Memory, Storage and network requirements when choosing an instance type.along with checking different types of instance types present.
+
+      
+      
+   
+   
+     
+
+   
+    
 
 ### Security Groups:
 
@@ -63,6 +105,15 @@
 
 20. **Explain the difference between General Purpose SSD (gp2) and Provisioned IOPS SSD (io1).**
    **Answer:** General Purpose SSD (gp2) provides balanced performance for a wide range of workloads. Provisioned IOPS SSD (io1) allows you to specify a consistent IOPS rate, making it ideal for I/O-intensive applications.
+
+    **What are the type of EBS Volumes and the use cases?**
+
+     **What are the type of root device?** EBS and instance store
+
+    **Can you attach an EBS volume to multiple EC2 instances simultaneously?**
+       **Answer:** No, we can attach only single EBS volume to single EC2 instances. It follows one-to-one mapping
+    
+    
 
 ### DLM (Data Lifecycle Manager):
 
@@ -106,13 +157,19 @@
 ### Auto Scaling Group:
 
 32. **What is Auto Scaling in AWS?**
-   **Answer:** Auto Scaling is a feature that automatically adjusts the number and size of your EC2 instances based on the conditions you set. It helps maintain application availability and scale resources efficiently.
+   **Answer:** Auto Scaling is a feature that automatically adds or removes capacity from Amazon EC2 virtual servers in response to application demand based on the conditions you set. It helps maintain application availability and scale resources efficiently.
 
 33. **How do you set up an Auto Scaling group?**
    **Answer:** To set up an Auto Scaling group, you define a launch configuration or launch template that specifies the instance type, AMI, key pair, and security groups. Then, you create an Auto Scaling group using this configuration.
 
 34. **Explain the significance of Launch Configurations in Auto Scaling.**
    **Answer:** A Launch Configuration is a template that defines the parameters for launching instances in an Auto Scaling group. It includes information like the instance type, AMI, key pair, and security groups.
+
+    **How can you scale EC2 instances based on demand?**
+    
+    **Answer:**  You can scale up or scale down the instances using Auto scaling. It automatically adjusts the no. of instances in an ASG according to the conditions defined such as CPU Utilization or network traffic
+
+     
 
 ### IAM Roles for EC2:
 
@@ -122,7 +179,11 @@
 36. **How do you associate an IAM role with an EC2 instance?**
    **Answer:** You associate an IAM role with an EC2 instance by attaching the role to the instance during launch or by stopping the instance, modifying the instance settings, and then attaching the role.
 
-37. **What are the advantages of using IAM roles with EC2 instances?**
+37. **Why do we attach IAM role with EC2 machine while creating it? What is Advantage of IAM role with EC2?** 
+    **Answer:**  Use IAM Roles instead of IAM Access Keys to appropriately grant access permissions to any application that perform AWS API requests running on your Amazon EC2 instances. With IAM roles you can avoid sharing long-term credentials and protect your instances against unauthorized access.
+
+
+39. **What are the advantages of using IAM roles with EC2 instances?**
    **Answer:** Using IAM roles allows you to grant specific permissions to instances without having to share security credentials. This enhances security and simplifies management.
 
 ### Elastic Beanstalk:
@@ -204,3 +265,10 @@
 
 60. **How do you configure Session Manager on an EC2 instance?**
    **Answer:** To configure Session Manager, you need to ensure that the AWS Systems Manager Agent (SSM Agent) is installed and running on the instance. You also need the necessary IAM permissions to start sessions.
+    
+### AWS CloudWatch:
+
+**Amazon CloudWatch** is web service helps users monitor AWS cloud services and applications deployed on AWS. CloudWatch can be used to collect, store and analyze historical and real-time performance data. It can also proactively monitor applications, improve resource use, optimize costs, and scale up or down based on changing workloads
+
+
+    
